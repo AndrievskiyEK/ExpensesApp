@@ -14,57 +14,57 @@
     <link rel="stylesheet" href="./styles/index.css">
 </head>
 <body>
-    <h1>Учет расходов</h1>
-    <div class="expenses">
-        <div class="expensesInput">
-            <div class="moneyImput rub">
-                <input 
-                class="moneyImput__imput" 
-                type="number"
-                min="0"
-                id="expenseInput">
+    <div class="container">
+        <h1>Учет расходов</h1>
+        <div class="expenses">
+            <div class="expensesInput">
+                <div class="moneyImput rub">
+                    <input 
+                    class="moneyImput__imput" 
+                    type="number"
+                    min="0"
+                    id="expenseInput">
+                </div>
+                <select id="categorySelect" class="categorySelect">
+                    <option hidden disabled selected value="Категория">
+                        Категория
+                    </option>
+                    <option value="Продукты">Продукты</option>
+                    <option value="Кафе и рестораны">Кафе и рестораны</option>
+                    <option value="Квартира">Квартира</option>
+                    <option value="Траснпорт">Транспорт</option>
+                </select>    
+                <div id="validationMessage" class="validationMessage">
+                    необходимо выбрать категорию 
+                </div>
             </div>
-            <select id="categorySelect" class="categorySelect">
-                <option hidden disabled selected value="Категория">
-                    Категория
-                </option>
-                <option value="Продукты">Продукты</option>
-                <option value="Кафе и рестораны">Кафе и рестораны</option>
-                <option value="Квартира">Квартира</option>
-                <option value="Траснпорт">Транспорт</option>
-            </select>    
-            <div id="validationMessage" class="validationMessage">
-                необходимо выбрать категорию 
+            <button class="addButton" id="addButton">Добавить</button>
+            <div class="stats">
+                <div class="stats__limit">
+                    <span class="label">Лимит:</span>
+                    <span id="limitValue" class="rub">10000</span>
+                    <img 
+                    id="changeLimitBtn"
+                    class="stats_changeLimitBtn"
+                    src="./resourses/change_limit.png" alt="иконка смены лимита">
+                </div>
+                <div class="stats__total">
+                    <span class="label">Всего</span>
+                    <span id="totalValue" class="rub">0</span>
+                </div>
+                <div class="stats__status">
+                    <span class="label">Статус:</span>
+                    <span id="statusText" class="stats__statusText_positive">все хорошо</span>           
+                </div>
             </div>
-        </div>
-
-        <button class="addButton" id="addButton">Добавить</button>
-
-        <div class="stats">
-            <div class="stats__limit">
-                <span class="label">Лимит:</span>
-                <span id="limitValue" class="rub">10000</span>
-                <img 
-                id="changeLimitBtn"
-                class="stats_changeLimitBtn"
-                src="./resourses/change_limit.png" alt="иконка смены лимита">
+    
+            <div class="history">
+                <div class="history__tltle label">История:</div>
+                <ol class="history__list" id="history__list">
+                </ol>
             </div>
-            <div class="stats__total">
-                <span class="label">Всего</span>
-                <span id="totalValue" class="rub">0</span>
-            </div>
-            <div class="stats__status">
-                <span class="label">Статус:</span>
-                <span id="statusText" class="stats__statusText_positive">все хорошо</span>           
-            </div>
-        </div>
-
-        <div class="history">
-            <div class="history__tltle label">История:</div>
-            <ol class="history__list" id="history__list">
-            </ol>
-        </div>
-        <button class="clearButton" id="clearButton">Сбросить расходы</button>
+            <button class="clearButton" id="clearButton">Сбросить расходы</button>
+        </div>   
     </div>
     <script src="main.js"></script>
 </body>
