@@ -9,6 +9,7 @@ body {
 }
 
 .container {
+    margin: 0 auto;
     margin-top: 67px;
     width: 1000px;
 }
@@ -136,6 +137,7 @@ ol {
 }
 
 .clearButton{
+    margin-top: 123px;
     width: 484px;
     display: block;
     padding: 10px 100px;
