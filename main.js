@@ -70,7 +70,7 @@ function getSelectedCategory() {
 }
 
 
-function validation(){
+function validationCategory(){
     const currentCategory = getSelectedCategory();
     if (currentCategory === "Категория"){
         validationMessage.classList.remove ("validationMessage_hidden");
@@ -81,7 +81,6 @@ function validation(){
     validationMessage.classList.add ("validationMessage_hidden"); // добавляем класс validationMessage_hidden (скрываем надпись)
     
     addButton.removeAttribute("disabled"); // удаляем атрибут disabled 
-
 }
 
 const clearInput = (input) => {
@@ -92,6 +91,7 @@ function addButtonHandler () {
     const currentAmount = getExpanseFromUser();
     // если в поле input пусто то прекращаем работу функции
     if (!currentAmount){
+        alert ("Введите потраченную сумму");
         return;
     }
     const currentCategory = getSelectedCategory();
@@ -133,6 +133,6 @@ function changeLimitHandler(){
 // привязка функций к обработчику событий
 addButtonNode.addEventListener("click", addButtonHandler);
 clearButtonNode.addEventListener("click", clearButtonHandler);
-inputNode.addEventListener("input", validation);
-categorySelectNode.addEventListener("click", validation);
+inputNode.addEventListener("input", validationCategory);
+categorySelectNode.addEventListener("click", validationCategory);
 changeLimitBtn.addEventListener('click', changeLimitHandler);
